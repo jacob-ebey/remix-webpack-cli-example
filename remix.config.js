@@ -3,7 +3,6 @@ import { DuplicatesPlugin } from "inspectpack/plugin/index.js";
 
 /** @type {Partial<import('remix-webpack-cli/lib/config-types').RemixWebpackConfig>} */
 let config = {
-  serverBuildPath: "build/index.cjs",
   webpack: (config, { buildFor, mode }) => {
     if (buildFor === "client" && mode === "production") {
       config.plugins = config.plugins || [];
