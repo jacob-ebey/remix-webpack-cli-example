@@ -27,7 +27,7 @@
     "eslint": "^8.15.0",
     "inspectpack": "^4.7.1",
     "patch-package": "^6.4.7",
-    "remix-webpack-cli": "^0.0.16",
+    "remix-webpack-cli": "^0.0.19",
     "typescript": "^4.6.4"
   },
   "engines": {

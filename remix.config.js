@@ -7,7 +7,9 @@ let config = {
     if (buildFor === "client" && mode === "production") {
       config.plugins = config.plugins || [];
       config.plugins.push(new DuplicatesPlugin({ verbose: true }));
-      config.plugins.push(new BundleStatsWebpackPlugin());
+      config.plugins.push(
+        new BundleStatsWebpackPlugin({ baseline: true, compare: true })
+      );
     }
   },
 };
