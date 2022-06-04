@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "postinstall": "patch-package",
+    "build": "remix-webpack build",
+    "dev": "dotenv -- remix-webpack dev",
+    "start": "remix-serve build/index.cjs"
+  },
+  "dependencies": {
+    "@remix-run/node": "0.0.0-experimental-9784dd06",
+    "@remix-run/react": "0.0.0-experimental-9784dd06",
+    "@remix-run/serve": "0.0.0-experimental-9784dd06",
+    "isbot": "^3.5.0",
+    "react": "next",
+    "react-dom": "next"
+  },
+  "devDependencies": {
+    "@remix-run/eslint-config": "0.0.0-experimental-9784dd06",
+    "@types/react": "^18.0.10",
+    "@types/react-dom": "^18.0.5",
+    "bundle-stats-webpack-plugin": "^3.3.9",
+    "dotenv-cli": "^5.1.0",
+    "eslint": "^8.15.0",
+    "inspectpack": "^4.7.1",
+    "patch-package": "^6.4.7",
+    "remix-webpack-cli": "^0.0.12",
+    "typescript": "^4.6.4"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
