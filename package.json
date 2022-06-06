@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "patch-package",
     "build": "remix-webpack build",
-    "dev": "dotenv -- node ./server.js",
+    "dev": "dotenv -- remix-webpack dev",
     "start": "node ./server.js"
   },
   "dependencies": {
@@ -27,7 +27,7 @@
     "eslint": "^8.15.0",
     "inspectpack": "^4.7.1",
     "patch-package": "^6.4.7",
-    "remix-webpack-cli": "^0.0.19",
+    "remix-webpack-cli": "^0.0.23",
     "typescript": "^4.6.4"
   },
   "engines": {
