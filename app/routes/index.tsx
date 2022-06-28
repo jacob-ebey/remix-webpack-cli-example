@@ -1,21 +1,26 @@
 import * as React from "react";
-import { json } from "@remix-run/server-runtime";
-import { useLoaderData } from "@remix-run/react";
+import { deferred } from "@remix-run/server-runtime";
+import { Deferred, useLoaderData } from "@remix-run/react";
 
 import * as os from "os";
 
 import Counter from "~/components/counter";
 
 export let loader = () => {
-  return json(`Hello, ${os.platform()}`);
+  return deferred({
+    message: new Promise((resolve) =>
+      setTimeout(() => resolve(`Hello, ${os.platform()}`), 1000)
+    ),
+  });
 };
 
 export default function Index() {
-  let message = useLoaderData();
+  let { message } = useLoaderData();
   return (
     <main>
-      <h1>{message}</h1>
       <Counter />
+      <Deferred value={message}>{(message) => <h1>{message}</h1>}</Deferred>
+      <p>More</p>
     </main>
   );
 }
