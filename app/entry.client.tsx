@@ -1,5 +1,12 @@
 import * as React from "react";
-import { hydrateRoot } from "react-dom/client";
+import { hydrate } from "react-dom";
 import { RemixBrowser } from "@remix-run/react";
 
-hydrateRoot(document, <RemixBrowser />);
+const documentElement = document.documentElement;
+const apply = (n) => document.replaceChild(n, documentElement);
+hydrate(<RemixBrowser />, {
+  childNodes: [documentElement],
+  firstChild: documentElement,
+  insertBefore: apply,
+  appendChild: apply,
+});
